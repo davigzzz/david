@@ -1,0 +1,66 @@
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+  }
+  @keyframes text-blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+@keyframes visibilidad{
+    to{ 
+        visibility: visible; 
+    }
+}
+@keyframes borde-visibilidad{
+    to{ 
+        border-right-width: 0; 
+    }
+}
+
+$name-width: 47.5vw;
+
+
+
+.heading {
+        background-color: #E8F1F2;
+        padding: 5%;
+        padding-top: 16.5vh;
+        text-align: center;
+
+        h1 {
+            margin: auto;
+            font-family: "Source Code Pro", monospace;
+            font-size: 17vw;
+            font-weight: 400;
+            animation: 2s typing steps(5, end), 0.5s text-blink step-end 5, borde-visibilidad 0s 2.1s forwards;
+            /* modificar el width para meter texto más largo o más chico, los steps deben contar los espacios vacios */
+            width: $name-width; 
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            &:nth-child(2){
+                visibility: hidden;
+                animation: 2s typing steps(6, end), 0.5s text-blink step-end 6, visibilidad 0s 2s forwards;
+                animation-delay: 2s;
+                width: $name-width+10vw;
+            }
+            &:nth-child(3){
+                visibility: hidden;
+                animation: 2s typing steps(7, end), 0.5s text-blink step-end infinite, visibilidad 0s 4s forwards;
+                animation-delay: 4s;
+                width: $name-width+20vw;
+            }
+          }
+         }
+
+.profile{
+        background-size: 100%;
+        border-radius: 50%;
+        margin: 20px auto;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        background-image:url("yo.jpeg");
+        }
